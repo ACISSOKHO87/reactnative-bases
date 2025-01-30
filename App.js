@@ -1,4 +1,7 @@
-import { StatusBar } from "expo-status-bar";
+if (__DEV__) {
+    require("./ReactotronConfig");
+}
+
 import {
     StyleSheet,
     Text,
@@ -17,6 +20,7 @@ import { useState } from "react";
 import ModalComponent from "./components/ModalComponent";
 import ItemsListComponent from "./components/ItemsListComponent";
 import OnOpenColseModalComponent from "./components/OpenCloseModalComponent";
+import reactotron from "reactotron-react-native";
 export default function App() {
     const [inputValue, setInputValue] = useState("");
     const [items, setItems] = useState([]);
@@ -33,6 +37,10 @@ export default function App() {
         setInputValue("");
         onOpenColseModal();
     };
+    reactotron.log("Log into reactotron interface");
+    fetch("https://jsonplaceholder.typicode.com/todos/1").then((response) =>
+        response.json()
+    );
     return (
         // { ScrollView: permet de scroller pour les composants avec des tailles fix ou pas qui debordent de l'ecran}
         // {SafeAreaView: pour les ios afin que le code ne s'affiche pas sous la barre de baterie et de reseau}: composant principale
