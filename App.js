@@ -2,20 +2,7 @@ if (__DEV__) {
     require("./ReactotronConfig");
 }
 
-import {
-    StyleSheet,
-    Text,
-    TextInput,
-    Button,
-    View,
-    ScrollView,
-    SafeAreaView,
-    FlatList,
-    Modal,
-    Image,
-    TouchableOpacity,
-    KeyboardAvoidingView,
-} from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import { useState } from "react";
 import ModalComponent from "./components/ModalComponent";
 import ItemsListComponent from "./components/ItemsListComponent";
